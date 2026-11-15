@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foodi — Restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="noodles" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="48" fill="#8a4b24"/><circle cx="50" cy="50" r="38" fill="#f4e3c1"/>
+    <g fill="none" stroke="#f2b01e" stroke-width="5" stroke-linecap="round">
+      <path d="M24 44q13-14 26 0t26 0"/><path d="M24 56q13-14 26 0t26 0"/><path d="M30 68q10-10 20 0t20 0"/></g>
+    <circle cx="42" cy="40" r="3" fill="#d9381e"/><circle cx="62" cy="52" r="3" fill="#3aa335"/>
+  </symbol>
+  <symbol id="salad" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="48" fill="#e9e9e9"/><circle cx="50" cy="50" r="42" fill="#fff"/>
+    <circle cx="50" cy="50" r="36" fill="#4c9a3c"/>
+    <g><circle cx="38" cy="40" r="7" fill="#7fc24d"/><circle cx="60" cy="36" r="8" fill="#2f7d32"/><circle cx="64" cy="58" r="7" fill="#7fc24d"/><circle cx="40" cy="62" r="8" fill="#2f7d32"/></g>
+    <circle cx="50" cy="50" r="6" fill="#e8442e"/><circle cx="34" cy="52" r="4" fill="#f4a21d"/><circle cx="56" cy="68" r="4" fill="#f4a21d"/><circle cx="66" cy="46" r="3" fill="#fff3b0"/>
+  </symbol>
+  <symbol id="fattoush" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="48" fill="#dcdcdc"/><circle cx="50" cy="50" r="42" fill="#fff"/><circle cx="50" cy="50" r="37" fill="#2e6e3a"/>
+    <g fill="#e98a1a"><circle cx="35" cy="38" r="4"/><circle cx="62" cy="44" r="4"/><circle cx="48" cy="66" r="4"/><circle cx="70" cy="62" r="3"/></g>
+    <g fill="#e9d6a4"><rect x="40" y="46" width="8" height="8" rx="2"/><rect x="56" y="30" width="8" height="8" rx="2"/><rect x="28" y="58" width="8" height="8" rx="2"/></g>
+    <circle cx="52" cy="54" r="5" fill="#c9302c"/>
+  </symbol>
+  <symbol id="vegsalad" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="48" fill="#dcdcdc"/><circle cx="50" cy="50" r="42" fill="#fff"/><circle cx="50" cy="50" r="37" fill="#5fae3f"/>
+    <ellipse cx="40" cy="50" rx="10" ry="14" fill="#a6c93a"/><ellipse cx="40" cy="50" rx="4" ry="7" fill="#d7e58a"/>
+    <g fill="#c7352a"><circle cx="62" cy="38" r="5"/><circle cx="66" cy="60" r="5"/></g>
+    <g fill="#f1d9a3"><rect x="52" y="46" width="9" height="6" rx="3"/><rect x="30" y="68" width="9" height="6" rx="3"/></g>
+  </symbol>
+  <symbol id="eggsalad" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="48" fill="#dcdcdc"/><circle cx="50" cy="50" r="42" fill="#fff"/><circle cx="50" cy="50" r="37" fill="#6a9a3a"/>
+    <g stroke="#3b8a2e" stroke-width="3" stroke-linecap="round"><path d="M22 40l16-8M24 52l18-6M26 62l16-2"/></g>
+    <ellipse cx="64" cy="58" rx="10" ry="12" fill="#fff"/><circle cx="64" cy="58" r="5" fill="#f4b41a"/>
+    <g fill="#d63a2a"><circle cx="44" cy="68" r="5"/><circle cx="70" cy="34" r="5"/><circle cx="52" cy="36" r="4"/></g>
+    <circle cx="34" cy="62" r="4" fill="#7b4a8a"/><circle cx="48" cy="52" r="4" fill="#7b4a8a"/>
+  </symbol>
+  <symbol id="burger" viewBox="0 0 100 100">
+    <path d="M14 46q0-26 36-26t36 26z" fill="#e6a23c"/><g fill="#fff3d0"><circle cx="34" cy="34" r="1.6"/><circle cx="50" cy="28" r="1.6"/><circle cx="66" cy="35" r="1.6"/></g>
+    <path d="M12 50q8 8 16 0t16 0 16 0 16 0 12 0v6H12z" fill="#5fb23a"/>
+    <rect x="12" y="56" width="76" height="9" rx="4" fill="#6b3a1e"/><rect x="16" y="64" width="68" height="5" fill="#f5c542"/>
+    <path d="M14 70h72q0 14-14 14H28q-14 0-14-14z" fill="#d98f2b"/>
+  </symbol>
+  <symbol id="sandwich" viewBox="0 0 100 100">
+    <g transform="rotate(-18 50 50)"><rect x="14" y="30" width="72" height="14" rx="6" fill="#e6b266"/>
+    <rect x="12" y="44" width="76" height="6" fill="#6fbf3f"/><rect x="14" y="50" width="72" height="6" fill="#d9472b"/><rect x="12" y="56" width="76" height="5" fill="#f5c542"/>
+    <rect x="14" y="61" width="72" height="14" rx="6" fill="#d9a050"/></g>
+  </symbol>
+  <symbol id="dessert" viewBox="0 0 100 100">
+    <circle cx="50" cy="34" r="16" fill="#f4a3b8"/><circle cx="34" cy="44" r="13" fill="#e8476b"/><circle cx="68" cy="44" r="13" fill="#f7d6df"/>
+    <circle cx="50" cy="16" r="5" fill="#c4161c"/><path d="M50 12q4-6 9-6" stroke="#2e7d32" stroke-width="2" fill="none"/>
+    <path d="M22 52h56l-8 28q-2 6-8 6H38q-6 0-8-6z" fill="#fff" stroke="#e5d7d7" stroke-width="2"/>
+    <rect x="42" y="84" width="16" height="4" rx="2" fill="#cfcfcf"/>
+  </symbol>
+  <symbol id="juice" viewBox="0 0 100 100">
+    <path d="M60 8l-6 40" stroke="#f5a623" stroke-width="4" stroke-linecap="round"/>
+    <path d="M30 24h40l-5 58q-1 6-7 6H42q-6 0-7-6z" fill="#fff" stroke="#e5e5e5" stroke-width="2"/>
+    <path d="M33 42h34l-3 40q-1 4-5 4H41q-4 0-5-4z" fill="#ffa726"/>
+    <circle cx="72" cy="74" r="14" fill="#ff9800"/><circle cx="72" cy="74" r="10" fill="#ffc266"/>
+    <path d="M72 64v20M62 74h20M65 67l14 14M79 67L65 81" stroke="#ff9800" stroke-width="1.5"/>
+  </symbol>
+</svg>
+
+<header class="nav-x container-x">
+  <a href="#" class="logo-x"><span class="logo-f-x">F</span>OODI</a>
+  <nav class="menu-x">
+    <a href="#" class="active-x">Home</a>
+    <a href="#">Menu <i class="chev-x"></i></a>
+    <a href="#">Services <i class="chev-x"></i></a>
+    <a href="#">Offers</a>
+  </nav>
+  <div class="nav-right-x">
+    <button class="icon-btn-x" aria-label="Search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    </button>
+    <button class="icon-btn-x cart-x" aria-label="Cart">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 016 0"/></svg>
+      <b>0</b>
+    </button>
+    <a href="#" class="btn-x btn-sm-x">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+      Contact
+    </a>
+  </div>
+</header>
+
+<main>
+  
+  <section class="hero-x container-x">
+    <div class="hero-text-x">
+      <h1>Dive into Delights<br>Of Delectable <span class="green-x">Food</span></h1>
+      <p>Where Each Plate Weaves a Story of Culinary<br>Mastery and Passionate Craftsmanship</p>
+      <div class="hero-actions-x">
+        <a href="#" class="btn-x btn-lg-x">Order Now</a>
+        <a href="#" class="watch-x">Watch Video</a>
+        <button class="play-x" aria-label="Play video"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z" fill="#111"/></svg></button>
+      </div>
+    </div>
+
+    <div class="hero-visual-x">
+      <div class="bubble-x">Hot spicy Food 🌶️</div>
+      <img class="girl-x" src="img/3495-girl.png" alt="Девушка с лапшой">
+
+      <div class="float-card-x fc1-x">
+        <img class="thumb-x" src="img/4bb8-noodles.png" alt="Spicy noodles">
+        <div><strong>Spicy noodles</strong><span class="stars-x">★★★<i>★★</i></span><em><s>$</s>18.00</em></div>
+      </div>
+      <div class="float-card-x fc2-x">
+        <img class="thumb-x" src="img/3164-salad.png" alt="Vegetarian salad">
+        <div><strong>Vegetarian salad</strong><span class="stars-x">★★★★<i>★</i></span><em><s>$</s>23.00</em></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="categories-x container-x">
+    <span class="eyebrow-x">CUSTOMER FAVORITES</span>
+    <h2>Popular Catagories</h2>
+    <div class="cat-grid-x">
+      <a href="#" class="cat-x"><div class="cat-img-x"><svg><use href="#burger"/></svg></div><h4>Main Dish</h4><small>(86 dishes)</small></a>
+      <a href="#" class="cat-x"><div class="cat-img-x"><svg><use href="#sandwich"/></svg></div><h4>Break Fast</h4><small>(12 break fast)</small></a>
+      <a href="#" class="cat-x"><div class="cat-img-x"><svg><use href="#dessert"/></svg></div><h4>Dessert</h4><small>(48 dessert)</small></a>
+      <a href="#" class="cat-x"><div class="cat-img-x"><svg><use href="#juice"/></svg></div><h4>Browse All</h4><small>(255 Items)</small></a>
+    </div>
+  </section>
+
+  
+  <section class="dishes-x container-x">
+    <div class="dishes-head-x">
+      <div>
+        <span class="eyebrow-x">SPECIAL DISHES</span>
+        <h2>Standout Dishes<br>From Our Menu</h2>
+      </div>
+      <div class="arrows-x">
+        <button class="arrow-x" aria-label="Назад"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="arrow-x arrow-on-x" aria-label="Вперёд"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="dish-grid-x">
+      <article class="dish-x">
+        <button class="heart-x on-x" aria-label="В избранное"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 5.800-8 11-8 11z"/></svg></button>
+        <svg class="dish-img-x"><use href="#fattoush"/></svg>
+        <h4>Fattoush salad</h4><p>Description of the item</p>
+        <div class="dish-foot-x"><span class="price-x"><s>$</s>24.00</span><span class="rate-x">★ 4.9</span></div>
+      </article>
+      <article class="dish-x">
+        <button class="heart-x" aria-label="В избранное"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 5.800-8 11-8 11z"/></svg></button>
+        <svg class="dish-img-x"><use href="#vegsalad"/></svg>
+        <h4>Vegetable salad</h4><p>Description of the item</p>
+        <div class="dish-foot-x"><span class="price-x"><s>$</s>26.00</span><span class="rate-x">★ 4.6</span></div>
+      </article>
+      <article class="dish-x">
+        <button class="heart-x" aria-label="В избранное"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 5.800-8 11-8 11z"/></svg></button>
+        <svg class="dish-img-x"><use href="#eggsalad"/></svg>
+        <h4>Egg vegi salad</h4><p>Description of the item</p>
+        <div class="dish-foot-x"><span class="price-x"><s>$</s>23.00</span><span class="rate-x">★ 4.5</span></div>
+      </article>
+    </div>
+  </section>
+
+  
+  <section class="testi-x container-x">
+    <div class="chef-wrap-x">
+      <img class="chef-x" src="img/9d6c-chef.png" alt="Шеф-повар">
+      <span class="emoji-x e1-x">😋</span><span class="emoji-x e2-x">🍕</span>
+      <div class="chef-tag-x">Our Best Chef 😋</div>
+    </div>
+    <div class="testi-text-x">
+      <span class="eyebrow-x">TESTIMONIALS</span>
+      <h2>What Our Customers<br>Say About Us</h2>
+      <p class="quote-x">“I had the pleasure of dining at Foodi last night, and I'm still raving about the experience! The attention to detail in presentation and service was impeccable”</p>
+      <div class="reviewers-x">
+        <div class="avatars-x">
+          <img src="img/e78b-av1.png" alt="">
+          <img src="img/77b1-av2.png" alt="">
+          <img src="img/1f90-av3.png" alt="">
+        </div>
+        <div><strong>Customer Feedback</strong><span class="rate-x">★ 4.9 <small>(18.6k Reviews)</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="services-x container-x">
+    <div class="services-text-x">
+      <span class="eyebrow-x">OUR STORY &amp; SERVICES</span>
+      <h2>Our Culinary Journey<br>And Services</h2>
+      <p>Rooted in passion, we curate unforgettable dining experiences and offer exceptional services, blending culinary artistry with warm hospitality.</p>
+      <a href="#" class="btn-x btn-lg-x">Explore</a>
+    </div>
+    <div class="srv-grid-x">
+      <div class="srv-x">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#3fdc4f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24h36q0 14-18 14T6 24z"/><path d="M14 24c-2-6 2-10 6-8 2-6 10-6 12 0 4-2 8 2 4 8"/></svg>
+        <h5>CATERING</h5><p>Delight your guests with our flavors and presentation</p>
+      </div>
+      <div class="srv-x">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#3fdc4f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M40 24a16 16 0 11-6-12.500"/><path d="M24 14v10l7 4"/><path d="M4 18h8M2 26h6"/></svg>
+        <h5>FAST DELIVERY</h5><p>We deliver your order promptly to your door</p>
+      </div>
+      <div class="srv-x">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#3fdc4f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h6l5 22h20l4-16"/><circle cx="18" cy="38" r="3"/><circle cx="34" cy="38" r="3"/><path d="M20 20l5 5 9-10"/></svg>
+        <h5>ONLINE ORDERING</h5><p>Explore menu &amp; order with ease using our Online Ordering</p>
+      </div>
+      <div class="srv-x">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#3fdc4f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="18" width="36" height="8" rx="2"/><path d="M8 26v16h32V26M24 18v24"/><path d="M24 18c-6 0-12-2-10-7s10 0 10 7c0-7 8-12 10-7s-4 7-10 7z"/></svg>
+        <h5>GIFT CARDS</h5><p>Give the gift of exceptional dining with Foodi Gift Cards</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer-x container-x">
+  <div class="foot-grid-x">
+    <div class="foot-brand-x">
+      <a href="#" class="logo-x small-x"><span class="logo-f-x">F</span>OODI</a>
+      <p>Savor the artistry where every dish is a culinary masterpiece</p>
+    </div>
+    <div><h6>Useful links</h6><a href="#">About us</a><a href="#">Events</a><a href="#">Blogs</a><a href="#">FAQ</a></div>
+    <div><h6>Main Menu</h6><a href="#">Home</a><a href="#">Offers</a><a href="#">Menus</a><a href="#">Reservation</a></div>
+    <div><h6>Contact Us</h6><a href="#">example@email.com</a><a href="#">+64 958 248 966</a><a href="#">Social media</a></div>
+  </div>
+  <div class="foot-bottom-x">
+    <div class="socials-x">
+      <a href="#" class="soc-x on-x" aria-label="Facebook"><svg width="12" height="12" viewBox="0 0 24 24" fill="#111"><path d="M14 8V6c0-1 .5-1.500 1.500-1.500H17V1h-3a4 4 0 00-4 4v3H7v3.500h3V23h4V11.500h3L17.500 8z"/></svg></a>
+      <a href="#" class="soc-x" aria-label="Instagram"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="#111"/></svg></a>
+      <a href="#" class="soc-x" aria-label="Twitter"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linejoin="round"><path d="M22 5a8 8 0 01-2.400.8A4 4 0 0021.400 3.500a8 8 0 01-2.600 1A4 4 0 0012 8.200C8 8 4.800 6 2.600 3.200a4 4 0 001.200 5.400A4 4 0 012 8a4 4 0 003.200 4 4 4 0 01-1.800.1 4 4 0 003.700 2.800A8 8 0 012 16.500 11.500 11.500 0 008.300 18.300c7.500 0 11.700-6.300 11.500-12A8 8 0 0022 5z"/></svg></a>
+      <a href="#" class="soc-x" aria-label="YouTube"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="#111"/></svg></a>
+    </div>
+    <p>Copyright © 2023 Dscode | All rights reserved</p>
+  </div>
+</footer>
+
+</body>
+</html>
